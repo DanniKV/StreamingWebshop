@@ -4,7 +4,14 @@ using System.Text;
 
 namespace StreamingWebshop.Core.ApplicationService
 {
-    public class IProductService
+    public interface IProductService
     {
+        //Post
+
+        //get
+
+        //Put
+
+        //Delete
     }
 }
