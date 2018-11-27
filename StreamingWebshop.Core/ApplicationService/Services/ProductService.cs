@@ -6,5 +6,6 @@ namespace StreamingWebshop.Core.ApplicationService.Services
 {
     public class ProductService : IProductService
     {
+
     }
 }
