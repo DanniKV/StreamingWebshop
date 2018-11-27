@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using StreamingWebshop.Core.ApplicationService;
+using StreamingWebshop.Core.Entity;
 
 namespace StreamShopRestAPI.Controllers
 {
@@ -20,34 +21,51 @@ namespace StreamShopRestAPI.Controllers
 
         // GET api/Products
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Product>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _ProductService.GetAllProducts();
         }
+
 
         // GET api/Products/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Product> Get(int id)
         {
-            return "value";
+            //Exceptions!
+
+
+            return _ProductService.FindProductById(id);
         }
 
         // POST api/Products
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<Product> Post([FromBody] Product product)
         {
+            //Exceptions!
+
+
+            return _ProductService.CreateProduct(product);
         }
 
         // PUT api/Products/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult<Product> Put(int id, [FromBody] Product product)
         {
+            //Exceptions!
+
+
+            return _ProductService.UpdateProduct(product);
         }
 
         // DELETE api/Products/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<Product> Delete(int id)
         {
+            var prod = _ProductService.DeleteProduct(id);
+            //Exceptions!
+
+
+            return Ok($"Product with the Id of: {id} is deleted!");
         }
     }
 }

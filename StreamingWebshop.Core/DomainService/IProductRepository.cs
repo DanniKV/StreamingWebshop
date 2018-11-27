@@ -7,12 +7,20 @@ namespace StreamingWebshop.Core.DomainService
 {
     public interface IProductRepository
     {
-        //Products Create(Products product);
+        //Create
+        Product Create(Product product);
 
         //Read
-        
+        Product ReadById(int id);
+        IEnumerable<Product> ReadAll();
+
+
         //Update
+        Product Update(Product ProductUpdate);
+
 
         //Delete
+        Product Delete(int id);
+
     }
 }
