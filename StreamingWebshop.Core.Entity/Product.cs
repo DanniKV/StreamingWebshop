@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StreamingWebshop.Core.Entity
 {
-    public class Products
+    public class Product
     {
 
         //Possibly need other kinds of product entities mb (pc hardware, cams, screens...)
