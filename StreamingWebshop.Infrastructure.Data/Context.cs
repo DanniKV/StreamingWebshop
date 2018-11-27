@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StreamingWebshop.Core.DomainService
+namespace StreamingWebshop.Infrastructure.Data
 {
-    public class IProductRepository
+    class Context
     {
-
     }
 }
