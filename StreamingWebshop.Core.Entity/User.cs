@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StreamingWebshop.Core.Entity
 {
-    public class Users
+    public class User
     {
         public int Id { get; set; }
 

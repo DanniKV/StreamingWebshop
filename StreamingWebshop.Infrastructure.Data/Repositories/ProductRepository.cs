@@ -2,6 +2,7 @@
 using StreamingWebshop.Core.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace StreamingWebshop.Infrastructure.Data.Repositories
@@ -20,27 +21,33 @@ namespace StreamingWebshop.Infrastructure.Data.Repositories
         //TODO!
         public Product Create(Product product)
         {
-            throw new NotImplementedException();
+            var prod = _ctx.Products.Add(product).Entity;
+            _ctx.SaveChanges();
+            return prod;
         }
 
         public Product Delete(int id)
         {
-            throw new NotImplementedException();
+            var prodRemoved = _ctx.Remove(new Product { Id = id }).Entity;
+            _ctx.SaveChanges();
+            return prodRemoved;
         }
 
         public IEnumerable<Product> ReadAll()
         {
-            throw new NotImplementedException();
+            return _ctx.Products;
         }
 
         public Product ReadById(int id)
         {
-            throw new NotImplementedException();
+            return _ctx.Products.FirstOrDefault(p => p.Id == id);
         }
 
-        public Product Update(Product ProductUpdate)
+        public Product Update(Product productUpdate)
         {
-            throw new NotImplementedException();
+            _ctx.Attach(productUpdate).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _ctx.SaveChanges();
+            return productUpdate;
         }
     }
 }
