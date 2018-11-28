@@ -61,7 +61,7 @@ namespace StreamShopRestAPI.Helpers
 
 
         // This method generates and returns a JWT token for a user.
-        public string GenerateToken(Users user)
+        public string GenerateToken(User user)
         {
             var claims = new List<Claim>
             {

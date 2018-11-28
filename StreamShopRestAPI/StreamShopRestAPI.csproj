@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StreamingWebshop.Core\StreamingWebshop.Core.csproj" />
+    <ProjectReference Include="..\StreamingWebshop.Infrastructure.Data\StreamingWebshop.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
