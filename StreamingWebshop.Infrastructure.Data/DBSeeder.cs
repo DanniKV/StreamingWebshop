@@ -28,7 +28,20 @@ namespace StreamingWebshop.Infrastructure.Data
                 Price = 4000.00
             }).Entity;
 
+            var prod2 = ctx.Products.Add(new Product()
+            {
+                Name = "WebCam",
+                Description = "Super Awesome GPU",
+                Price = 850.95
+            }).Entity;
 
+            var prod3 = ctx.Products.Add(new Product()
+            {
+                Name = "MSI Monitor",
+                Description = "Super Awesome GPU",
+                Price = 2299.95
+            }).Entity;
+            ctx.SaveChanges();
         }
         
     }

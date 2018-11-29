@@ -2,6 +2,7 @@
 using StreamingWebshop.Core.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace StreamingWebshop.Core.ApplicationService.Services
@@ -10,45 +11,47 @@ namespace StreamingWebshop.Core.ApplicationService.Services
     {
         //dep injection
         readonly IProductRepository _productRepository;
-        readonly IProductService _productService;
 
         public ProductService(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
-
-
-
         //TODO!
+        public Product NewProduct(string Name, string Description, double Price)
+        {
+            var prod = new Product()
+            {
+                Name = Name,
+                Description = Description,
+                Price = Price
+            };
+            return prod;
+        }
+
         public Product CreateProduct(Product prod)
         {
-            throw new NotImplementedException();
+            return _productRepository.Create(prod);
         }
 
         public Product DeleteProduct(int id)
         {
-            throw new NotImplementedException();
+            return _productRepository.Delete(id);
         }
 
         public Product FindProductById(int id)
         {
-            throw new NotImplementedException();
+            return _productRepository.ReadById(id);
         }
 
         public List<Product> GetAllProducts()
         {
-            throw new NotImplementedException();
-        }
-
-        public Product newProduct(string Name, string Description, double Price)
-        {
-            throw new NotImplementedException();
+            return _productRepository.ReadAll().ToList();
         }
 
         public Product UpdateProduct(Product productUpdate)
         {
-            throw new NotImplementedException();
+            return _productRepository.Update(productUpdate);
         }
     }
 }

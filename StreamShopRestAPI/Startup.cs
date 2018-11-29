@@ -45,14 +45,14 @@ namespace StreamShopRestAPI
         {
             /*
             //In-Memory Database FakeSQL DB
-            services.AddDbContext<CustomerAppContext>(
+            services.AddDbContext<Context>(
                 opt => opt.UseInMemoryDatabase("FakeSQL-DB"));
                 */
 
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<Context>(
-                opt => opt.UseSqlite("Data Source=CustomerApp.db"));
+                opt => opt.UseSqlite("Data Source=StreamBossDB"));
             }
             //For SQLite DB.. Needs actual lists and tables
             //ConnectionString fra Azure (Online)
@@ -101,7 +101,7 @@ namespace StreamShopRestAPI
                 {
                     var ctx = scope.ServiceProvider.GetService<Context>();
 
-                    //DBInitializer.SeedDB(ctx);
+                    DBSeeder.SeedDB(ctx);
                 }
 
             }
