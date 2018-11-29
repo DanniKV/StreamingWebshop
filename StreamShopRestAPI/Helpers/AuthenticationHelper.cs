@@ -7,7 +7,7 @@ using StreamingWebshop.Core.Entity;
 
 namespace StreamShopRestAPI.Helpers
 {
-    public class AuthenticationHelper
+    public class AuthenticationHelper: IAuthenticationHelper
     {
         
         private byte[] secretBytes;

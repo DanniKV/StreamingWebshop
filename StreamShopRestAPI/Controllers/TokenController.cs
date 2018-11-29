@@ -11,6 +11,8 @@ using StreamShopRestAPI.Helpers;
 
 namespace StreamShopRestAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class TokenController : Controller
     {
         private IUserService _service;
@@ -22,11 +24,10 @@ namespace StreamShopRestAPI.Controllers
             authenticationHelper = authService;
         }
 
-        /*       ---------------NEEDS TO DO THE FULL USER CODING---------------
         [HttpPost]
         public IActionResult Login([FromBody]LoginInput model)
         {
-            var user = _service.GetAll().FirstOrDefault(u => u.Username == model.Username);
+            var user = _service.GetAllUsers().FirstOrDefault(u => u.UserName == model.Username);
 
             // check if username exists
             if (user == null)
@@ -39,9 +40,9 @@ namespace StreamShopRestAPI.Controllers
             // Authentication successful
             return Ok(new
             {
-                username = user.Username,
+                username = user.UserName,
                 token = authenticationHelper.GenerateToken(user)
             });
-        } */
+        } 
     }
 }
