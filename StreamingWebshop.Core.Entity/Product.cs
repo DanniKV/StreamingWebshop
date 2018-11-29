@@ -16,7 +16,9 @@ namespace StreamingWebshop.Core.Entity
 
         public double Price { get; set; }
 
+        public string Category { get; set; }
 
+        public int Stock { get; set; }
 
 
 

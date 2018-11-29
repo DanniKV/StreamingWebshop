@@ -52,7 +52,7 @@ namespace StreamShopRestAPI
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<Context>(
-                opt => opt.UseSqlite("Data Source=StreamBossDB"));
+                opt => opt.UseSqlite("Data Source=StreamBoss.db"));
             }
             //For SQLite DB.. Needs actual lists and tables
             //ConnectionString fra Azure (Online)
@@ -69,7 +69,9 @@ namespace StreamShopRestAPI
             services.AddScoped<IProductService, ProductService>();
 
             //User
-            services.AddScoped<IUserService, UserService>();
+            //services.AddScoped<IUserRepository, UserRepository>();
+            //services.AddScoped<IUserService, UserService>();
+            
 
             //For Ignoring Loop References
             services.AddMvc().AddJsonOptions(Options =>

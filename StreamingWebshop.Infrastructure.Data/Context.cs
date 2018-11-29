@@ -12,7 +12,10 @@ namespace StreamingWebshop.Infrastructure.Data
         {
 
         }
-
+        //Fluint API Model-Builder
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+        }
 
         public DbSet<Product> Products { get; set; }
 

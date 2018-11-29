@@ -1,4 +1,5 @@
-﻿using StreamingWebshop.Core.DomainService;
+﻿using Microsoft.EntityFrameworkCore;
+using StreamingWebshop.Core.DomainService;
 using StreamingWebshop.Core.Entity;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,7 @@ namespace StreamingWebshop.Infrastructure.Data.Repositories
 
         public Product Update(Product productUpdate)
         {
-            _ctx.Attach(productUpdate).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _ctx.Attach(productUpdate).State = EntityState.Modified;
             _ctx.SaveChanges();
             return productUpdate;
         }
