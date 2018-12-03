@@ -62,10 +62,25 @@ namespace StreamShopRestAPI.Controllers
 
         // PUT api/User/5
         [HttpPut("{id}")]
-        public ActionResult<User> Put(int id, [FromBody] User user)
+        public ActionResult<User> Put(int id, [FromBody] UserInput model)
         {
             //Exceptions!
-
+            byte[] passwordHash, passwordSalt;
+            _authenticationHelper.CreatePasswordHash(model.Password, out passwordHash, out passwordSalt);
+            var user = new User
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                UserName = model.UserName,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                Address = model.Address,
+                IsAdmin = model.IsAdmin
+                
+            };
 
             return _UserService.UpdateUser(user);
         }

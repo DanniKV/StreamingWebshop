@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using StreamingWebshop.Core.ApplicationService;
 using StreamingWebshop.Core.DomainService;
 using StreamingWebshop.Core.Entity;
@@ -34,7 +35,7 @@ namespace StreamingWebshop.Infrastructure.Data.Repositories
 
         public User UpdateUser(User userUpdate)
         {
-            _ctx.Attach(userUpdate).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _ctx.Attach(userUpdate).State = EntityState.Modified;
             _ctx.SaveChanges();
             return userUpdate;
         }
