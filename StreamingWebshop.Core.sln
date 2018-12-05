@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{A9D34652-B93E-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShopRestAPI", "StreamShopRestAPI\StreamShopRestAPI.csproj", "{F84BF044-82BE-462B-B534-F2DF2B4CFDFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{CE1D953D-4377-4BA2-8038-89C37CF8AADE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F84BF044-82BE-462B-B534-F2DF2B4CFDFA}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{F84BF044-82BE-462B-B534-F2DF2B4CFDFA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F84BF044-82BE-462B-B534-F2DF2B4CFDFA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CE1D953D-4377-4BA2-8038-89C37CF8AADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1D953D-4377-4BA2-8038-89C37CF8AADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1D953D-4377-4BA2-8038-89C37CF8AADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1D953D-4377-4BA2-8038-89C37CF8AADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

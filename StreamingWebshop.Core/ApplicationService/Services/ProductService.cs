@@ -2,6 +2,7 @@
 using StreamingWebshop.Core.Entity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -37,6 +38,14 @@ namespace StreamingWebshop.Core.ApplicationService.Services
 
         public Product CreateProduct(Product prod)
         {
+            if (prod.Name == null)
+                throw new InvalidDataException("Product needs a Name");
+            if (prod.Category == null)
+                throw new InvalidDataException("Product needs a Type");
+            if (Math.Abs(prod.Price) < 1)
+                throw new InvalidDataException("Product Price needs to be more than 1");
+            if (prod.Description == null)
+                throw new InvalidDataException("Product needs a description");
             return _productRepository.Create(prod);
         }
 
@@ -57,6 +66,14 @@ namespace StreamingWebshop.Core.ApplicationService.Services
 
         public Product UpdateProduct(Product productUpdate)
         {
+            if (productUpdate.Name == null)
+                throw new InvalidDataException("Product needs a Name");
+            if (productUpdate.Category == null)
+                throw new InvalidDataException("Product needs a Type");
+            if (Math.Abs(productUpdate.Price) < 1)
+                throw new InvalidDataException("Product Price needs to be more than 1");
+            if (productUpdate.Description == null)
+                throw new InvalidDataException("Product needs a description");
             return _productRepository.Update(productUpdate);
         }
     }

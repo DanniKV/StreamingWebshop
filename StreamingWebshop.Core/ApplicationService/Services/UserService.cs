@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using StreamingWebshop.Core.DomainService;
 using StreamingWebshop.Core.Entity;
@@ -37,7 +38,25 @@ namespace StreamingWebshop.Core.ApplicationService.Services
 
 
     public User CreateUser(User user)
-    {
+    {        if (user.FirstName == null)
+            throw new InvalidDataException("Please add a First Name");
+        if (user.LastName == null)
+            throw new InvalidDataException("Please add a Last Name");
+        if (user.UserName == null)
+            throw new InvalidDataException("Please add a User Name");
+        if (user.PasswordHash == null)
+            throw new InvalidDataException("Something went terribly wrong!");
+        if (user.PasswordSalt == null)
+            throw new InvalidDataException("Something went terribly wrong!");
+        if (user.Email == null)
+            throw new InvalidDataException("Please add an Email");
+        if (user.PhoneNumber == null)
+            throw new InvalidDataException("Please add a Phone Number");
+        if (user.Address == null)
+            throw new InvalidDataException("Please add an Address");
+        if (user.IsAdmin == null)
+            throw new InvalidDataException("Something went terribly wrong!");
+
         return _userRepository.CreateUser(user);
     }
 
@@ -53,6 +72,24 @@ namespace StreamingWebshop.Core.ApplicationService.Services
 
         public User UpdateUser(User userUpdate)
         {
+            if (userUpdate.FirstName == null)
+                throw new InvalidDataException("Please add a First Name");
+            if (userUpdate.LastName == null)
+                throw new InvalidDataException("Please add a Last Name");
+            if (userUpdate.UserName == null)
+                throw new InvalidDataException("Please add a User Name");
+            if (userUpdate.PasswordHash == null)
+                throw new InvalidDataException("Something went terribly wrong!");
+            if (userUpdate.PasswordSalt == null)
+                throw new InvalidDataException("Something went terribly wrong!");
+            if (userUpdate.Email == null)
+                throw new InvalidDataException("Please add an Email");
+            if (userUpdate.PhoneNumber == null)
+                throw new InvalidDataException("Please add a Phone Number");
+            if (userUpdate.Address == null)
+                throw new InvalidDataException("Please add an Address");
+
+
             return _userRepository.UpdateUser(userUpdate);
         }
 
