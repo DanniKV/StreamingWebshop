@@ -10,7 +10,10 @@ namespace StreamingWebshop.Core.ApplicationService
         //New Product
         Product NewProduct(string Name,
             string Description,
-            double Price);
+            double Price,
+            string Category,
+            int Stock,
+            string PicUrl);
 
         //Post
         Product CreateProduct(Product prod);

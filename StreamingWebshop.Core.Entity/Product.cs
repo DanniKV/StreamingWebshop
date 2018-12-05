@@ -20,7 +20,7 @@ namespace StreamingWebshop.Core.Entity
 
         public int Stock { get; set; }
 
-
+        public string PicUrl { get; set; }
 
     }
 }

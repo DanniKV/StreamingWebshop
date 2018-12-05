@@ -25,21 +25,30 @@ namespace StreamingWebshop.Infrastructure.Data
             {
                 Name = "GTX1018TI",
                 Description = "Super Awesome GPU",
-                Price = 4000.00
+                Price = 4000.00,
+                Category = "HardWare",
+                Stock = 20,
+                PicUrl = "EXAMPLEURL.jpg"
             }).Entity;
 
             var prod2 = ctx.Products.Add(new Product()
             {
                 Name = "WebCam",
                 Description = "Super Awesome GPU",
-                Price = 850.95
+                Price = 850.95,
+                Category = "HardWare",
+                Stock = 20,
+                PicUrl = "EXAMPLEURL.jpg"
             }).Entity;
 
             var prod3 = ctx.Products.Add(new Product()
             {
                 Name = "MSI Monitor",
                 Description = "Super Awesome GPU",
-                Price = 2299.95
+                Price = 2299.95,
+                Category = "HardWare",
+                Stock = 20,
+                PicUrl = "EXAMPLEURL.jpg"
             }).Entity;
             ctx.SaveChanges();
         }

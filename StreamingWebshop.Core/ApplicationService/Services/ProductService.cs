@@ -18,13 +18,19 @@ namespace StreamingWebshop.Core.ApplicationService.Services
         }
 
         //TODO!
-        public Product NewProduct(string Name, string Description, double Price)
+        public Product NewProduct(string Name, 
+            string Description, double Price,
+            string Category, int Stock, string PicUrl)
         {
             var prod = new Product()
             {
                 Name = Name,
                 Description = Description,
-                Price = Price
+                Price = Price,
+                Category = Category,
+                Stock = Stock,
+                PicUrl = PicUrl
+                
             };
             return prod;
         }
