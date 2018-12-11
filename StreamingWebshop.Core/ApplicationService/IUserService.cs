@@ -16,6 +16,8 @@ namespace StreamingWebshop.Core.ApplicationService.Services
             string email,
             string phoneNumber,
             string address,
+            String city,
+            int zipCode,
             Boolean isAdmin
         );
         

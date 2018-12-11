@@ -54,6 +54,8 @@ namespace StreamShopRestAPI.Controllers
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.Address,
+                City = model.City,
+                ZipCode = model.ZipCode,
                 IsAdmin = model.IsAdmin
                 
             };

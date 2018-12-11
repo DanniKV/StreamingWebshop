@@ -19,6 +19,10 @@ namespace StreamingWebshop.Core.Entity
         public string PhoneNumber { get; set; }
 
         public string Address { get; set; }
+        
+        public string City { get; set; }
+        
+        public int ZipCode { get; set; }
 
         public Boolean IsAdmin { get; set; }
     }

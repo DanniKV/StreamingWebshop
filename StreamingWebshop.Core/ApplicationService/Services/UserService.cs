@@ -19,7 +19,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
         //
         public User NewUser(string firstName, string lastName, string userName, byte[] passwordHash,
             byte[] passwordSalt, string email,
-            string phoneNumber, string address, bool isAdmin)
+            string phoneNumber, string address, string city, int zipcode, bool isAdmin)
         {
             var user = new User()
             {
@@ -30,6 +30,8 @@ namespace StreamingWebshop.Core.ApplicationService.Services
                 PasswordSalt = passwordSalt,
                 Email = email,
                 PhoneNumber = phoneNumber,
+                City = city,
+                ZipCode = zipcode,
                 Address = address,
                 IsAdmin = isAdmin
             };
