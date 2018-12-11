@@ -42,7 +42,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
             throw new InvalidDataException("Please add a First Name");
         if (user.LastName == null)
             throw new InvalidDataException("Please add a Last Name");
-        if (user.UserName == null)
+        if (user.UserName == null || user.UserName.Length > 5) 
             throw new InvalidDataException("Please add a User Name");
         if (user.PasswordHash == null)
             throw new InvalidDataException("Something went terribly wrong!");

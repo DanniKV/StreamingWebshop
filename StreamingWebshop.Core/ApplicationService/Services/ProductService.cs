@@ -21,7 +21,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
         //TODO!
         public Product NewProduct(string Name, 
             string Description, double Price,
-            string Category, int Stock, string PicUrl)
+            string Category, int Stock, List<Image> images)
         {
             var prod = new Product()
             {
@@ -30,7 +30,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
                 Price = Price,
                 Category = Category,
                 Stock = Stock,
-                PicUrl = PicUrl
+                Images = images,
                 
             };
             return prod;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using Moq;
@@ -27,11 +28,12 @@ namespace xUnitTests.ApplicationService.Services
             IProductService service = 
                 new ProductService(productRepo.Object);
             var product = new Product()
+            
             {
                 Id = 1,
               //  Name = "Hollaballoon----------------",
                 Category = "balloon animal",
-                PicUrl = "the_bad_stuff.christmas",
+                Images = null,
                 Price = 200,
                 Stock = 20,
                 Description = "test"
@@ -54,7 +56,7 @@ namespace xUnitTests.ApplicationService.Services
                 Id = 2,
                 Name = "Holla123123balloon",
               //Category = "balloo123n animal----------------",
-                PicUrl = "the_bad_123123stuff.christmas",
+                Images = null,
                 Price = 200,
                 Stock = 20,
                 Description = "test"
@@ -76,7 +78,7 @@ namespace xUnitTests.ApplicationService.Services
                 Id = 2,
                 Name = "testtestetsetsetest",
                 Category = "basdfasdfasdf",
-                PicUrl = "the_bad_123123stuff.christmas",
+                Images = null,
                 Price = 200,
                 Stock = 20,
                 //Description = "test"
@@ -100,7 +102,7 @@ namespace xUnitTests.ApplicationService.Services
                 Id = 1,
                 Name = "Hollaballoon",
                 Category = "balloon animal",
-                PicUrl = "the_bad_stuff.christmas",
+                Images = null,
                 Price = 200,
                 Stock = 20,
                 Description = "test"

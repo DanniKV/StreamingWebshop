@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StreamingWebshop.Core.Entity
 {
@@ -20,7 +21,7 @@ namespace StreamingWebshop.Core.Entity
 
         public int Stock { get; set; }
 
-        public string PicUrl { get; set; }
+        public List<Image> Images { get; set; }
 
     }
 }

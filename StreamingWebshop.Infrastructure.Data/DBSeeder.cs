@@ -28,7 +28,7 @@ namespace StreamingWebshop.Infrastructure.Data
                 Price = 4000.00,
                 Category = "HardWare",
                 Stock = 20,
-                PicUrl = "EXAMPLEURL.jpg"
+                Images = null,
             }).Entity;
 
             var prod2 = ctx.Products.Add(new Product()
@@ -38,7 +38,7 @@ namespace StreamingWebshop.Infrastructure.Data
                 Price = 850.95,
                 Category = "HardWare",
                 Stock = 20,
-                PicUrl = "EXAMPLEURL.jpg"
+                Images = null,
             }).Entity;
 
             var prod3 = ctx.Products.Add(new Product()
@@ -48,7 +48,7 @@ namespace StreamingWebshop.Infrastructure.Data
                 Price = 2299.95,
                 Category = "HardWare",
                 Stock = 20,
-                PicUrl = "EXAMPLEURL.jpg"
+                Images = null,
             }).Entity;
             ctx.SaveChanges();
         }

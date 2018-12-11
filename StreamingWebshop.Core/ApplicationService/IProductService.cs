@@ -13,7 +13,7 @@ namespace StreamingWebshop.Core.ApplicationService
             double Price,
             string Category,
             int Stock,
-            string PicUrl);
+            List<Image> images);
 
         //Post
         Product CreateProduct(Product prod);
