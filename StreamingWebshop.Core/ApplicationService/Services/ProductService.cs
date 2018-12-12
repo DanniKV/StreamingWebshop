@@ -20,14 +20,15 @@ namespace StreamingWebshop.Core.ApplicationService.Services
 
         //TODO!
         public Product NewProduct(string Name, 
-            string Description, double Price,
+            string Description, double RetailPrice, double WholeSalePrice,
             string Category, int Stock, string PicUrl)
         {
             var prod = new Product()
             {
                 Name = Name,
                 Description = Description,
-                Price = Price,
+                RetailPrice = RetailPrice,
+                WholeSalePrice = WholeSalePrice,
                 Category = Category,
                 Stock = Stock,
                 PicUrl = PicUrl
@@ -42,7 +43,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
                 throw new InvalidDataException("Product needs a Name");
             if (prod.Category == null)
                 throw new InvalidDataException("Product needs a Type");
-            if (Math.Abs(prod.Price) < 1)
+            if (Math.Abs(prod.RetailPrice) < 1)
                 throw new InvalidDataException("Product Price needs to be more than 1");
             if (prod.Description == null)
                 throw new InvalidDataException("Product needs a description");
@@ -70,7 +71,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
                 throw new InvalidDataException("Product needs a Name");
             if (productUpdate.Category == null)
                 throw new InvalidDataException("Product needs a Type");
-            if (Math.Abs(productUpdate.Price) < 1)
+            if (Math.Abs(productUpdate.RetailPrice) < 1)
                 throw new InvalidDataException("Product Price needs to be more than 1");
             if (productUpdate.Description == null)
                 throw new InvalidDataException("Product needs a description");

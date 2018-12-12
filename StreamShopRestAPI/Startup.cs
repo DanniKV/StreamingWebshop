@@ -51,7 +51,7 @@ namespace StreamShopRestAPI
             Byte[] secretBytes = new byte[40];
             Random rand = new Random();
             rand.NextBytes(secretBytes);
-            
+
             // Add JWT based authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -67,7 +67,7 @@ namespace StreamShopRestAPI
                     ClockSkew = TimeSpan.FromMinutes(5) //5 minute tolerance for the expiration date
                 };
             });
-            
+
             /*
             //In-Memory Database FakeSQL DB
             services.AddDbContext<Context>(
@@ -77,7 +77,7 @@ namespace StreamShopRestAPI
             if (_env.IsDevelopment())
             {
                 services.AddDbContext<Context>(
-                opt => opt.UseSqlite("Data Source=StreamBoss.db"));
+                    opt => opt.UseSqlite("Data Source=StreamBoss.db"));
             }
             //For SQLite DB.. Needs actual lists and tables
             //ConnectionString fra Azure (Online)
@@ -96,7 +96,7 @@ namespace StreamShopRestAPI
             //User
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
-            
+
             // Register the AuthenticationHelper in the helpers folder for dependency
             // injection. It must be registered as a singleton service. The AuthenticationHelper
             // is instantiated with a parameter. The parameter is the previously created
@@ -111,20 +111,23 @@ namespace StreamShopRestAPI
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            /* For Cors Options
+            //For Cors Options
             services.AddCors(options =>
-            //AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
-            options.AddPolicy("AllowSpecificOrigin",
-                builder => builder
-                .WithOrigins("http:/localhost:5000").AllowAnyHeader().AllowAnyMethod()
-                .WithOrigins(" https://shopappdkv.firebaseapp.com").AllowAnyHeader().AllowAnyMethod()
-                )); 
-            ; */
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder
+                        //.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+                        //.WithOrigins("FIREBASE").AllowAnyHeader().AllowAnyMethod()
+                        .WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -146,8 +149,14 @@ namespace StreamShopRestAPI
                 }
                 app.UseHsts();
             }
+
+            app.UseHttpsRedirection();
+            
             //Allow Any Cors
-            app.UseCors(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            ////app.UseCors(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            
+            app.UseCors("AllowSpecificOrigin");
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

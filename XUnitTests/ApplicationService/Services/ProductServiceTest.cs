@@ -32,7 +32,7 @@ namespace xUnitTests.ApplicationService.Services
               //  Name = "Hollaballoon----------------",
                 Category = "balloon animal",
                 PicUrl = "the_bad_stuff.christmas",
-                Price = 200,
+                RetailPrice = 200,
                 Stock = 20,
                 Description = "test"
             };
@@ -55,7 +55,7 @@ namespace xUnitTests.ApplicationService.Services
                 Name = "Holla123123balloon",
               //Category = "balloo123n animal----------------",
                 PicUrl = "the_bad_123123stuff.christmas",
-                Price = 200,
+                RetailPrice = 200,
                 Stock = 20,
                 Description = "test"
             };
@@ -77,7 +77,7 @@ namespace xUnitTests.ApplicationService.Services
                 Name = "testtestetsetsetest",
                 Category = "basdfasdfasdf",
                 PicUrl = "the_bad_123123stuff.christmas",
-                Price = 200,
+                RetailPrice = 200,
                 Stock = 20,
                 //Description = "test"
             };
@@ -101,7 +101,7 @@ namespace xUnitTests.ApplicationService.Services
                 Name = "Hollaballoon",
                 Category = "balloon animal",
                 PicUrl = "the_bad_stuff.christmas",
-                Price = 200,
+                RetailPrice = 200,
                 Stock = 20,
                 Description = "test"
             };

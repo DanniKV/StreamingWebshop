@@ -25,7 +25,8 @@ namespace StreamingWebshop.Infrastructure.Data
             {
                 Name = "GTX1018TI",
                 Description = "Super Awesome GPU",
-                Price = 4000.00,
+                RetailPrice = 4000.00,
+                WholeSalePrice = 3698.99,
                 Category = "HardWare",
                 Stock = 20,
                 PicUrl = "EXAMPLEURL.jpg"
@@ -35,7 +36,8 @@ namespace StreamingWebshop.Infrastructure.Data
             {
                 Name = "WebCam",
                 Description = "Super Awesome GPU",
-                Price = 850.95,
+                RetailPrice = 850.95,
+                WholeSalePrice = 800.00,
                 Category = "HardWare",
                 Stock = 20,
                 PicUrl = "EXAMPLEURL.jpg"
@@ -45,7 +47,8 @@ namespace StreamingWebshop.Infrastructure.Data
             {
                 Name = "MSI Monitor",
                 Description = "Super Awesome GPU",
-                Price = 2299.95,
+                RetailPrice = 2299.95,
+                WholeSalePrice = 2000.00,
                 Category = "HardWare",
                 Stock = 20,
                 PicUrl = "EXAMPLEURL.jpg"

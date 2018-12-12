@@ -8,12 +8,13 @@ namespace StreamingWebshop.Core.ApplicationService
     public interface IProductService
     {
         //New Product
-        Product NewProduct(string Name,
-            string Description,
-            double Price,
-            string Category,
-            int Stock,
-            string PicUrl);
+        Product NewProduct(string name,
+            string description,
+            double retailPrice,
+            double wholeSalePrice,
+            string category,
+            int stock,
+            string picUrl);
 
         //Post
         Product CreateProduct(Product prod);
