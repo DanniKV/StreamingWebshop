@@ -65,6 +65,11 @@ namespace StreamingWebshop.Core.ApplicationService.Services
             return _productRepository.ReadAll().ToList();
         }
 
+        public List<Product> GetProductsByCategory(string category)
+        {
+            return _productRepository.ReadByCategory(category);
+        }
+
         public Product UpdateProduct(Product productUpdate)
         {
             if (productUpdate.Name == null)

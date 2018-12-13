@@ -22,5 +22,6 @@ namespace StreamingWebshop.Core.DomainService
         //Delete
         Product Delete(int id);
 
+        List<Product> ReadByCategory(string category);
     }
 }

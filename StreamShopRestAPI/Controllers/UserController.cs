@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using StreamingWebshop.Core.ApplicationService.Services;
 using StreamingWebshop.Core.Entity;
 using StreamShopRestAPI.Helpers;
@@ -80,8 +81,9 @@ namespace StreamShopRestAPI.Controllers
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.Address,
+                City = model.City,
+                ZipCode = model.ZipCode,
                 IsAdmin = model.IsAdmin
-                
             };
 
             return _UserService.UpdateUser(user);

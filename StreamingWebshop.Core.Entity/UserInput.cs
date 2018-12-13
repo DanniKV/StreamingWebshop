@@ -24,6 +24,6 @@ namespace StreamingWebshop.Core.Entity
         
         public int ZipCode { get; set; }
 
-        public Boolean IsAdmin { get; set; }
+        public Boolean IsAdmin { get; set; } = false;
     }
 }

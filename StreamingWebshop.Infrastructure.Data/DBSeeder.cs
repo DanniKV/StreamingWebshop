@@ -23,11 +23,11 @@ namespace StreamingWebshop.Infrastructure.Data
             //Fake Products
             var prod1 = ctx.Products.Add(new Product()
             {
-                Name = "GTX1018TI",
-                Description = "Super Awesome GPU",
+                Name = "Greenscreen",
+                Description = "Greenscreen",
                 RetailPrice = 4000.00,
                 WholeSalePrice = 3698.99,
-                Category = "HardWare",
+                Category = "Greenscreen",
                 Stock = 20,
                 PicUrl = "EXAMPLEURL.jpg"
             }).Entity;
@@ -35,21 +35,21 @@ namespace StreamingWebshop.Infrastructure.Data
             var prod2 = ctx.Products.Add(new Product()
             {
                 Name = "WebCam",
-                Description = "Super Awesome GPU",
+                Description = "webcam",
                 RetailPrice = 850.95,
                 WholeSalePrice = 800.00,
-                Category = "HardWare",
+                Category = "Webcam",
                 Stock = 20,
                 PicUrl = "EXAMPLEURL.jpg"
             }).Entity;
 
             var prod3 = ctx.Products.Add(new Product()
             {
-                Name = "MSI Monitor",
-                Description = "Super Awesome GPU",
+                Name = "webcam",
+                Description = "Webcam",
                 RetailPrice = 2299.95,
                 WholeSalePrice = 2000.00,
-                Category = "HardWare",
+                Category = "Webcam",
                 Stock = 20,
                 PicUrl = "EXAMPLEURL.jpg"
             }).Entity;

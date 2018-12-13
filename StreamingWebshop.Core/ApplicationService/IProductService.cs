@@ -24,6 +24,8 @@ namespace StreamingWebshop.Core.ApplicationService
 
         List<Product> GetAllProducts();
 
+        List<Product> GetProductsByCategory(string category);
+
 
         //Put
         Product UpdateProduct(Product productUpdate);

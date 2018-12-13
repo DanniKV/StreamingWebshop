@@ -34,6 +34,13 @@ namespace StreamingWebshop.Infrastructure.Data.Repositories
             return prodRemoved;
         }
 
+        public List<Product> ReadByCategory(string category)
+        {
+            var productsByCategory = new List<Product>();
+            productsByCategory.AddRange(_ctx.Products.Where(p => p.Category == category));
+            return productsByCategory;
+        }
+
         public IEnumerable<Product> ReadAll()
         {
             return _ctx.Products;

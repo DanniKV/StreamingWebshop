@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using Moq;
@@ -13,12 +14,11 @@ namespace xUnitTests.ApplicationService.Services
     public class ProductServiceTest
     {
 
-
+             
         public void Dispose()
         {
             //Dispose Stuff we dont need anymore
         }
-        
         
         [Fact]
         public void CreateProductWithoutName()
