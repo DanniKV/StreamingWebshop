@@ -6,7 +6,7 @@ using System.Text;
 
 namespace StreamingWebshop.Infrastructure.Data
 {
-    public class Context: DbContext
+    public class Context : DbContext
     {
         public Context(DbContextOptions<Context> Opt) : base(Opt)
         {
@@ -19,7 +19,7 @@ namespace StreamingWebshop.Infrastructure.Data
 
         public DbSet<Product> Products { get; set; }
 
-        public DbSet<User> Users { get; set; } 
+        public DbSet<User> Users { get; set; }
 
         
 

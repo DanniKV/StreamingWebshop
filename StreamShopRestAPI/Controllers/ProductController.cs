@@ -36,8 +36,8 @@ namespace StreamShopRestAPI.Controllers
 
             return _ProductService.FindProductById(id);
         }
-        
-        // GET api/Products/5
+        /**
+        // GET api/Products/category
         [HttpGet("{category}")]
         public ActionResult<IEnumerable<Product>> Get(string category)
         {
@@ -45,7 +45,7 @@ namespace StreamShopRestAPI.Controllers
 
 
             return _ProductService.GetProductsByCategory(category);
-        }
+        }**/
 
         // POST api/Products
         [HttpPost]
