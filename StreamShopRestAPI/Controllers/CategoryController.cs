@@ -20,7 +20,7 @@ namespace StreamShopRestAPI.Controllers
             _ProductService = productService;
         }
 
-        // GET: api/Category
+        // GET: api/category
         [HttpGet]
         public IEnumerable<string> Get()
         {

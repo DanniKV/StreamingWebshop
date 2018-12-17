@@ -18,9 +18,17 @@ namespace StreamingWebshop.Infrastructure.Data.Repositories
         //Creates a user with the given user info.
         public User CreateUser(User user)
         {
-            var usr = _ctx.Users.Add(user).Entity;
-            _ctx.SaveChanges();
-            return usr;
+            if (_ctx.Users.FirstOrDefault(u => u.UserName == user.UserName) == null)
+            {
+                var usr = _ctx.Users.Add(user).Entity;
+                _ctx.SaveChanges();
+                return usr;
+            } else
+            {
+                throw new System.Exception();
+            }
+            
+            
         }
         //Finds the user with the given Id
         public User FindUserById(int id)
