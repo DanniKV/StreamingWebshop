@@ -18,7 +18,7 @@ namespace StreamingWebshop.Core.ApplicationService.Services
             _productRepository = productRepository;
         }
 
-        //TODO!
+        
         public Product NewProduct(string Name, 
             string Description, double RetailPrice, double WholeSalePrice,
             string Category, int Stock, string PicUrl)
@@ -36,7 +36,12 @@ namespace StreamingWebshop.Core.ApplicationService.Services
             };
             return prod;
         }
-
+        /**
+         * Checks if product contains Name, Category and description.
+         * As well as making sure the price is more than 1.
+         * Then sends the product to the product repository
+         * and returns the product created.
+         */
         public Product CreateProduct(Product prod)
         {
             if (prod.Name == null)
@@ -49,27 +54,39 @@ namespace StreamingWebshop.Core.ApplicationService.Services
                 throw new InvalidDataException("Product needs a description");
             return _productRepository.Create(prod);
         }
-
+        /**
+         * Forwards the product id to the repository
+         * and returns the product deleted
+         */
         public Product DeleteProduct(int id)
         {
             return _productRepository.Delete(id);
         }
-
+        /**
+         * Forwards the Id to the repository
+         * and returns the product found.
+         */
         public Product FindProductById(int id)
         {
             return _productRepository.ReadById(id);
         }
-
+        /**
+         * Returns all products and turns them into a list.
+         */
         public List<Product> GetAllProducts()
         {
             return _productRepository.ReadAll().ToList();
         }
-
+        /**
+         * Returns all products with the matching category string
+         */
         public List<Product> GetProductsByCategory(string category)
         {
             return _productRepository.ReadByCategory(category);
         }
-
+        /**
+         * Checks for missing attributes and then returns updated product.
+         */
         public Product UpdateProduct(Product productUpdate)
         {
             if (productUpdate.Name == null)

@@ -40,14 +40,18 @@ namespace StreamingWebshop.Infrastructure.Data.Repositories
         {
             return _ctx.Users;
         }
-
+        /**
+         * Updates the user with the updated user information.
+         */
         public User UpdateUser(User userUpdate)
         {
             _ctx.Attach(userUpdate).State = EntityState.Modified;
             _ctx.SaveChanges();
             return userUpdate;
         }
-
+        /**
+         * Deletes the user with the given Id.
+         */
         public User DeleteUser(int id)
         {
             var userRemoved = _ctx.Remove(new User {Id = id}).Entity;

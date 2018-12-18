@@ -30,9 +30,6 @@ namespace StreamShopRestAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Product> Get(int id)
         {
-            //Exceptions!
-
-
             return _ProductService.FindProductById(id);
             
         }
@@ -41,9 +38,6 @@ namespace StreamShopRestAPI.Controllers
         [HttpPost]
         public ActionResult<Product> Post([FromBody] Product product)
         {
-            //Exceptions!
-
-
             return _ProductService.CreateProduct(product);
         }
 
@@ -51,9 +45,6 @@ namespace StreamShopRestAPI.Controllers
         [HttpPut("{id}")]
         public ActionResult<Product> Put(int id, [FromBody] Product product)
         {
-            //Exceptions!
-
-
             return _ProductService.UpdateProduct(product);
         }
 
@@ -62,8 +53,6 @@ namespace StreamShopRestAPI.Controllers
         public ActionResult<Product> Delete(int id)
         {
             var prod = _ProductService.DeleteProduct(id);
-            //Exceptions!
-
 
             return Ok($"Product with the Id of: {id} is deleted!");
         }

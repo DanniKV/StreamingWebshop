@@ -41,6 +41,7 @@ namespace StreamShopRestAPI.Controllers
             return Ok(new
             {
                 username = user.UserName,
+                //generates a token from the user.
                 token = authenticationHelper.GenerateToken(user)
             });
         } 

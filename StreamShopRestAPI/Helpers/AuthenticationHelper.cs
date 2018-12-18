@@ -65,11 +65,13 @@ namespace StreamShopRestAPI.Helpers
         {
             var claims = new List<Claim>
             {
+                //List of claims the token contains.
                 new Claim("userName", user.UserName),
                 new Claim("id", user.Id.ToString())
             };
 
             if (user.IsAdmin)
+                //Claims the Administrator role if IsAdmin is true.
                 claims.Add(new Claim("role", "Administrator"));
 
             var token = new JwtSecurityToken(

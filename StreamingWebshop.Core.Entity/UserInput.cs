@@ -4,6 +4,7 @@ namespace StreamingWebshop.Core.Entity
 {
     public class UserInput
     {
+        //The input for creating / updating a user.
         public int Id { get; set; }
 
         public string FirstName { get; set; }
@@ -23,7 +24,7 @@ namespace StreamingWebshop.Core.Entity
         public string City { get; set; }
         
         public int ZipCode { get; set; }
-
+        // = false defaults the IsAdmin Boolean to false if none are given.
         public Boolean IsAdmin { get; set; } = false;
     }
 }

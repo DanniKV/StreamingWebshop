@@ -58,9 +58,7 @@ namespace StreamShopRestAPI
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateAudience = false,
-                    //ValidAudience = "TodoApiClient",
                     ValidateIssuer = false,
-                    //ValidIssuer = "TodoApi",
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(secretBytes),
                     ValidateLifetime = true, //validate the expiration and not before values in the token

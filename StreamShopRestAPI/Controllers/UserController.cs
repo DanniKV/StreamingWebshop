@@ -32,9 +32,6 @@ namespace StreamShopRestAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<User> Get(int id)
         {
-            //Exceptions!
-
-
             return _UserService.FindUserById(id);
         }
 
@@ -42,14 +39,18 @@ namespace StreamShopRestAPI.Controllers
         [HttpPost]
         public ActionResult<User> Post([FromBody] UserInput model)
         {
-            //Exceptions!
+            //Creates a space to put the byte[] Hash and Salt
             byte[] passwordHash, passwordSalt;
+            //Inserts the given password into the CreatePasswordHash method
+            //And inserts the given passwordHash and passwordSalt in the byte[]
+            //To store the encrypted password when creating a user.
             _authenticationHelper.CreatePasswordHash(model.Password, out passwordHash, out passwordSalt);
             var user = new User
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.UserName,
+                //Password has now been encrypted from the UserInput model.
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
                 Email = model.Email,
@@ -67,8 +68,11 @@ namespace StreamShopRestAPI.Controllers
         [HttpPut("{id}")]
         public ActionResult<User> Put(int id, [FromBody] UserInput model)
         {
-            //Exceptions!
+            //Creates a space to put the byte[] Hash and Salt
             byte[] passwordHash, passwordSalt;
+            //Inserts the given password into the CreatePasswordHash method
+            //And inserts the given passwordHash and passwordSalt in the byte[]
+            //To store the encrypted password when creating a user.
             _authenticationHelper.CreatePasswordHash(model.Password, out passwordHash, out passwordSalt);
             var user = new User
             {
@@ -76,6 +80,7 @@ namespace StreamShopRestAPI.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.UserName,
+                //Password has now been encrypted from the UserInput model.
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
                 Email = model.Email,
@@ -94,8 +99,6 @@ namespace StreamShopRestAPI.Controllers
         public ActionResult<User> Delete(int id)
         {
             var usr = _UserService.DeleteUser(id);
-            //Exceptions!
-
 
             return Ok($"User with the Id of: {id} is deleted!");
         }
