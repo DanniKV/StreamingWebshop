@@ -39,3 +39,9 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+.idea/.idea.StreamingWebshop.Core/.idea/contentModel.xml
+.idea/.idea.StreamingWebshop.Core/.idea/indexLayout.xml
+.idea/.idea.StreamingWebshop.Core/.idea/modules.xml
+.idea/.idea.StreamingWebshop.Core/.idea/vcs.xml
+.idea/.idea.StreamingWebshop.Core/.idea/workspace.xml
+.idea/.idea.StreamingWebshop.Core/riderModule.iml
